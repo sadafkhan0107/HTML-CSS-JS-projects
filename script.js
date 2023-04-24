@@ -40,7 +40,7 @@ showTodos.addEventListener('click', (e) => {
     let key= e.target.dataset.key;
     let delKey = e.target.dataset.todokey;
     todoList = todoList.map((todo) => 
-          key === todo.id? {...todo, isCompleted: !isCompleted}: todo
+          key === todo.id? {...todo, isCompleted: !todo.isCompleted}: todo
          );
     todoList = todoList.filter(todo => todo.id !== delKey);
     localStorage.setItem("todo",JSON.stringify(todoList));
