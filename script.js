@@ -4,7 +4,6 @@ let showTodos =  document.querySelector('.todos-container')
 let todoInput;
 
 let todo = "";
-let isCompleted = false;
 
 let localData = JSON.parse(localStorage.getItem("todo"));
 let todoList = localData || [];
@@ -27,10 +26,10 @@ todoButton.addEventListener('click', (e)=> {
             todo : todoInput, 
             isCompleted: false
         })
+        renderTodoList(todoList);
+        localStorage.setItem("todo", JSON.stringify(todoList));
+        input.value = "";
     }
-    renderTodoList(todoList);
-    localStorage.setItem("todo", JSON.stringify(todoList));
-    todoInput.value = "";
 })
 /* Event listner to strike through the todo list once we clicked on a specific wishlist
 we will apply event listner to the whole todo container bcoz there will be numerous todos and applying
@@ -51,11 +50,11 @@ showTodos.addEventListener('click', (e) => {
 function renderTodoList(todoList){
    showTodos.innerHTML = todoList.map(({id, todo, isCompleted}) => `<div> <input id="item-${id}" 
    type="checkbox" data-key= ${id} ${isCompleted ? "checked" : ""}> 
-   <label for="item-${id} class= "todo todo-text t-pointer ${isCompleted ? "checked-todo" : ""} 
+   <label for="item-${id}" class= "todo todo-text t-pointer ${isCompleted ? "checked-todo" : ""}"
    data-key= ${id}>${todo}</label> 
-   <button class= "btn "><span dataset-todokey = ${id} class="material-icons-outlined">
+   <button class= "btn "><span data-todokey = ${id} class="material-icons-outlined">
    delete
-   </span></button></div>`)
+   </span></button></div>`).join(" ")
 }
 
 renderTodoList(todoList);
