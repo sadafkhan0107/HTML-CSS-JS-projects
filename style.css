@@ -1,0 +1,57 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    padding: 0rem;
+    margin: 0rem;
+    color: white;
+    background-color: black;
+}
+.heading-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.checked-todo{
+    text-decoration: line-through;
+    color: white;
+}
+.todo-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.input{
+    height: 1.6rem;
+    width: 15rem;
+    outline: none; 
+}
+.t-pointer{
+    cursor: pointer;
+}
+.todo-text{
+    word-wrap: break-word;
+}
+
+.button{
+    height: 2rem;
+    width: 3.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: red;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.todos-container{
+    height: 50vh;
+    width: 19.5rem;
+    margin: auto;
+    overflow-y: auto;
+}
