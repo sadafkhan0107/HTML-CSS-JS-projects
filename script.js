@@ -48,11 +48,11 @@ showTodos.addEventListener('click', (e) => {
 })
 
 function renderTodoList(todoList){
-   showTodos.innerHTML = todoList.map(({id, todo, isCompleted}) => `<div> <input id="item-${id}" 
+   showTodos.innerHTML = todoList.map(({id, todo, isCompleted}) => `<div class= "relative"> <input id="item-${id}" 
    type="checkbox" data-key= ${id} ${isCompleted ? "checked" : ""}> 
    <label for="item-${id}" class= "todo todo-text t-pointer ${isCompleted ? "checked-todo" : ""}"
    data-key= ${id}>${todo}</label> 
-   <button class= "btn "><span data-todokey = ${id} class="material-icons-outlined">
+   <button class= "btn absolute right-0"><span data-todokey = ${id} class="material-icons-outlined">
    delete
    </span></button></div>`).join(" ")
 }
